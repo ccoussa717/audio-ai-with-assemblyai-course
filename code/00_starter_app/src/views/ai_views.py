@@ -38,6 +38,6 @@ async def start_job(
 
 @router.get('/ai/check-status/{job_id}')
 async def check_job_status(job_id: str):
-    finished = await background_service.get_job_status(bson.ObjectId(job_id))
+    finished = await background_service.is_job_finished(bson.ObjectId(job_id))
     print(f"Job status: {finished}")
     return {"status": finished}

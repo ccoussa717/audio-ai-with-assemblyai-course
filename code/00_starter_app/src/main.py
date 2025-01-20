@@ -15,7 +15,7 @@ from views import home_views
 from views import podcasts_views
 from views import ai_views
 
-hot_reload = True
+hot_reload = False
 
 development_mode = True
 mongo_setup.development_mode = development_mode
@@ -82,3 +82,5 @@ def configure_secrets():
 if __name__ == '__main__':
     main()
     uvicorn.run(app)
+else:
+    main()
