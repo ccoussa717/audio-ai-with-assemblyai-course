@@ -46,8 +46,16 @@
                 <audio class="w-fit mx-auto" src="${episode.enclosure_url}" controls style="width: 90%"></audio>
             </div>
             <br>
-            <div class="episode-actions" hx-swap="outerHTML">
-                <strong>TODO: Episode action buttons</strong>
+            <div class="episode-actions">
+                <a class="button-indigo rounded-button" href="#transcribe" tal:conditions="not transcript_url"
+                >Create transcript</a>
+                <a class="button-green rounded-button" href="${transcript_url}" tal:condition="transcript_url"
+                >View transcript</a>
+
+                <a class="button-indigo rounded-button" href="#sumarize" tal:condition="not summary_url"
+                >Create summaryM</a>
+                <a class="button-indigo rounded-button" hrefhref"$chat"
+                >Enable AI QA <i class"fa-solid fa-robot"></i></a><br>
             </div>
             <br>
         </div>
